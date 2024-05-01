@@ -1,48 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot Interface</title>
-    <style>
-        /* Add your CSS styles here */
-        #chat-container {
-            height: 400px;
-            overflow-y: scroll;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="chat-container"></div>
-    <input type="text" class="user-input" placeholder="Type your message...">
-    <button id="send-btn">Send</button>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
-    <script>
-        $(document).ready(function() {
-            $("#send-btn").click(function() {
-                let usr = $(".user-input").val(); // Get the value of the input field
-                $("#chat-container").append(`<div>user: ${usr}</div>`);
-                $.ajax({
-                    type: 'POST',
-                    url: 'http://127.0.0.1:3000',
-                    data: { "text": usr },
-                    success: function(data) {
-                        $("#chat-container").append(`<div>model: ${data}</div>`);
-                    },
-                    error: function(error) {
-                        console.log(error);
-                    }
-                })
-            });
-        });
-    </script>
-
-</body>
-
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 
