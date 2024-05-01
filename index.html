@@ -28,7 +28,8 @@
             padding: 20px;
             width: 90%;
             /* max-width: 300px; Limit chat container width on larger screens */
-            height: 60vh; /* Limit chat container height to half of the viewport height */
+            height: 65vh;
+            /* Limit chat container height to half of the viewport height */
             overflow-y: auto;
             overflow-x: hidden;
             margin-bottom: 20px;
@@ -56,7 +57,8 @@
         }
 
         input[type="text"] {
-            width: calc(100% - 40px); /* Adjust input width to fit screen */
+            width: calc(100% - 40px);
+            /* Adjust input width to fit screen */
             padding: 10px;
             border: 2px solid #4e6cff;
             border-radius: 5px;
@@ -144,7 +146,7 @@
 </head>
 
 <body>
-    <h2>BlueChat</h2>
+    <h2>Blue Chatbot</h2>
     <div id="chat-container">
         <!-- Chat messages will be appended here -->
     </div>
@@ -152,17 +154,16 @@
     <button id="send-btn">Send</button>
 
     <script>
-        // JavaScript code remains unchanged
-    </script>
-
-</body>
-
-</html>
-    <script>
-        // Get references to HTML elements
         const chatContainer = document.getElementById("chat-container");
         const userInput = document.getElementById("user-input");
         const sendBtn = document.getElementById("send-btn");
+
+        // Function to append a message to the chat container
+        function appendMessage(role, text) {
+            const messageDiv = document.createElement("div");
+            messageDiv.textContent = `${role}: ${text}`;
+            chatContainer.appendChild(messageDiv);
+        }
 
         // Function to send user input to the server and get response
         async function sendToServer(message) {
@@ -202,15 +203,14 @@
             }
         });
 
-        // Function to append a message to the chat container
-        function appendMessage(role, text) {
-            const messageDiv = document.createElement("div");
-            messageDiv.textContent = `${role}: ${text}`;
-            messageDiv.classList.add("message");
-            chatContainer.appendChild(messageDiv);
-            chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to bottom
-        }
+        // Event listener for Enter key press
+        userInput.addEventListener("keydown", async (event) => {
+            if (event.key === "Enter") {
+                sendBtn.click(); // Simulate a click on the send button
+            }
+        });
     </script>
+
 </body>
 
 </html>
