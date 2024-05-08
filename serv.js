@@ -5,7 +5,7 @@ const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require("@googl
 const hostname = "127.0.0.1";
 const port = 3000;
 
-const genAI = new GoogleGenerativeAI("AIzaSyAvlSWYNgVbjBNBvTyk60VNaLUvFez62xE"); // Replace "API_KEY" with your actual API key
+const genAI = new GoogleGenerativeAI("YOUR_API_KEY"); // Replace "API_KEY" with your actual API key
 const MODEL_NAME = "gemini-1.5-pro-latest";
 
 const server = http.createServer(async (req, res) => {
